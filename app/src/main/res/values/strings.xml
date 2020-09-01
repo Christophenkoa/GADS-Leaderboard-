@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">GADS Leaderboard</string>
+    <string name="app_name">GADS Leaderboad</string>
+    <string name="title_list">LEADERBOAD</string>
+    <string name="todo">TODO</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="send">Submit</string>
+    <string name="tab_text_1">Learning Leaders</string>
+    <string name="tab_text_2">Skill IQ Leaders</string>
 </resources>
