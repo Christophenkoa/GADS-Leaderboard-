@@ -10,17 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gadsleaderboard.models.LearnerHours;
+import com.example.gadsleaderboard.models.LearnerScoreIQ;
 
 import java.util.List;
 
-public class LearningRecycleAdapter extends RecyclerView.Adapter<LearningRecycleAdapter.ViewHolder> {
+public class SkillRecycleAdapter extends RecyclerView.Adapter<SkillRecycleAdapter.ViewHolder> {
 
     private final Context mContext;
-    private final List<LearnerHours> mLearner;
+    private final List<LearnerScoreIQ> mLearner;
     private final LayoutInflater mLayoutInflater;
 
-    public LearningRecycleAdapter(Context context, List<LearnerHours> learner) {
+    public SkillRecycleAdapter(Context context, List<LearnerScoreIQ> learner) {
         mContext = context;
         this.mLearner = learner;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -28,17 +28,17 @@ public class LearningRecycleAdapter extends RecyclerView.Adapter<LearningRecycle
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mLayoutInflater.inflate(R.layout.learning_list_item,parent,false);
-        return new ViewHolder(itemView);
+    public SkillRecycleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = mLayoutInflater.inflate(R.layout.skill_list_item,parent,false);
+        return new SkillRecycleAdapter.ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SkillRecycleAdapter.ViewHolder holder, int position) {
         holder.mLearnerName.setText(mLearner.get(position).getName());
-        holder.mLearnerHours.setText(mLearner.get(position).getHours()+" learning hours, "
+        holder.mLearnerScore.setText(mLearner.get(position).getScore()+" score iq, "
                 +mLearner.get(position).getCountry());
-        holder.mImageView.setImageResource(R.drawable.top_learner);
+        holder.mImageView.setImageResource(R.drawable.skill_iq_trimmed);
     }
 
     @Override
@@ -49,14 +49,14 @@ public class LearningRecycleAdapter extends RecyclerView.Adapter<LearningRecycle
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final TextView mLearnerName;
-        public final TextView mLearnerHours;
+        public final TextView mLearnerScore;
         private final ImageView mImageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mLearnerName = itemView.findViewById(R.id.learner_name);
-            mLearnerHours = itemView.findViewById(R.id.learner_hours);
-            mImageView = itemView.findViewById(R.id.badge_hours);
+            mLearnerName = itemView.findViewById(R.id.learner_name_iq);
+            mLearnerScore = itemView.findViewById(R.id.learner_iq_score);
+            mImageView = itemView.findViewById(R.id.skill_iq_badge);
         }
     }
 }
