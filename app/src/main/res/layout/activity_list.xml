@@ -32,7 +32,7 @@
                 tools:ignore="MissingConstraints" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/submit_initiate"
                 android:layout_width="120dp"
                 android:layout_height="22dp"
                 android:layout_marginEnd="12dp"
